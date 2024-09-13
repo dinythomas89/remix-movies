@@ -1,7 +1,7 @@
 import { MongoClient, Db } from 'mongodb';
-import dotenv from 'dotenv';
+//import dotenv from 'dotenv';
 
-dotenv.config();
+//dotenv.config();
 
 const uri = process.env.MONGODB_URI as string;
 const client = new MongoClient(uri);
@@ -12,7 +12,7 @@ async function connectDB(): Promise<Db> {
   if (!dbInstance) {
     try {
       await client.connect();
-      dbInstance = client.db();
+      dbInstance = client.db("movies");
     } catch (error) {
       console.error('Error connecting to MongoDB:', error);
       throw error;

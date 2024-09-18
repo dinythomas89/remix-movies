@@ -12,7 +12,7 @@ async function connectDB(): Promise<Db> {
   if (!dbInstance) {
     try {
       await client.connect();
-      dbInstance = client.db("movies");
+      dbInstance = client.db("test");
     } catch (error) {
       console.error('Error connecting to MongoDB:', error);
       throw error;
